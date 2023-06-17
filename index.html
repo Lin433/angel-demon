@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
   <body>
-    <div style="width: 70%; height: 50px; border:1px solid; margin:auto;"></div>
+    <button onclick="Priglashenie()">Button 1</button>
+    <button onclick="NaStenu()">Button 2</button>
     <div id="unity-container" class="unity-desktop">
       <canvas id="unity-canvas" width=960 height=600></canvas>
       <div id="unity-loading-bar">
@@ -24,9 +25,6 @@
         <div id="unity-build-title">FlyingMan3D</div>
       </div>
     </div>
-    <button onclick="Priglashenie()">Button 1</button>
-    <button onclick="NaStenu()">Button 2</button>
-    <button onclick="Reklamma()">Button 3</button>
     <script src="https://unpkg.com/@vkontakte/vk-bridge/dist/browser.min.js"></script>
     <script>
       var container = document.querySelector("#unity-container");
@@ -56,8 +54,6 @@
           attachments: 'https://habr.com'});
       }
 
-
-        
       function Reklamma(){
         vkBridge.send('VKWebAppShowNativeAds', { ad_format: 'reward' })
         vkBridge.send('VKWebAppCheckNativeAds', { ad_format: 'interstitial'});
@@ -94,7 +90,7 @@
         showBanner: unityShowBanner,
       };
 
-      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+      /*if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
         container.className = "unity-mobile";
         // Avoid draining fillrate performance on mobile devices,
         // and default/override low DPI mode on mobile browsers.
@@ -102,7 +98,7 @@
       } else {
         canvas.style.width = "960px";
         canvas.style.height = "600px";
-      }
+      }*/
       loadingBar.style.display = "block";
 
       var script = document.createElement("script");
