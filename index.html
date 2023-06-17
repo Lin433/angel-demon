@@ -7,9 +7,11 @@
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
-  <body>
-    <button onclick="Priglashenie()">Button 1</button>
-    <button onclick="NaStenu()">Button 2</button>
+  <body style="background-color:#000000;">
+    <div id="button-container" style="display:flex; justify-content: space-between; margin: 10px;">
+      <button onclick="Priglashenie()" style="background-image: url('button1-image.png'); width: 53px; height: 50px; border: none;"></button>
+      <button onclick="NaStenu()" style="background-image: url('button2-image.png'); width: 53px; height: 50px; border: none;"></button>
+    </div>
     <div id="unity-container" class="unity-desktop">
       <canvas id="unity-canvas" width=960 height=800></canvas>
       <div id="unity-loading-bar">
@@ -94,10 +96,10 @@
         // Avoid draining fillrate performance on mobile devices,
         // and default/override low DPI mode on mobile browsers.
         config.devicePixelRatio = 1;
-      } else {
+      } else {*/
         canvas.style.width = "960px";
-        canvas.style.height = "600px";
-      }*/
+        canvas.style.height = "1800px";
+      //}
       loadingBar.style.display = "block";
 
       var script = document.createElement("script");
