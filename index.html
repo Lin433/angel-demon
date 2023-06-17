@@ -21,6 +21,10 @@
         </div>
       </div>
       <div id="unity-warning"> </div>
+      <div id="unity-footer">
+        <div id="unity-webgl-logo"></div>
+        <div id="unity-fullscreen-button"></div>
+      </div>
     </div>
     <script src="https://unpkg.com/@vkontakte/vk-bridge/dist/browser.min.js"></script>
     <script>
@@ -105,9 +109,9 @@
           progressBarFull.style.width = 100 * progress + "%";
         }).then((unityInstance) => {
           loadingBar.style.display = "none";
-          /*fullscreenButton.onclick = () => {
+          fullscreenButton.onclick = () => {
             unityInstance.SetFullscreen(1);
-          };*/
+          };
         }).catch((message) => {
           alert(message);
         });
